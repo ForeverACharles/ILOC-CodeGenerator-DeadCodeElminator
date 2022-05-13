@@ -1,0 +1,59 @@
+	// Assign STATIC_AREA_ADDRESS to register "r0"
+ 	 loadI 1024 	=> r0 
+	// Determine address of LHS variable "a" at offset 0
+ 	 loadI 1 	=> r2 
+ 	 storeAI r2 	=> r0, 0 
+	// Determine address of LHS variable "b" at offset 4
+ 	 loadI 2 	=> r4 
+ 	 storeAI r4 	=> r0, 4 
+	// Determine address of LHS variable "c" at offset 8
+ 	 loadI 3 	=> r6 
+ 	 storeAI r6 	=> r0, 8 
+	// Determine address of LHS variable "d" at offset 12
+ 	 loadI 4 	=> r8 
+ 	 storeAI r8 	=> r0, 12 
+	// Determine address of LHS variable "a" at offset 0
+	// Load RHS value of variable "a" at offset 0
+ 	 loadAI r0, 0 	=> r10 
+	// Load RHS value of variable "b" at offset 4
+ 	 loadAI r0, 4 	=> r11 
+ 	 add r10, r11 	=> r12 
+ 	 storeAI r12 	=> r0, 0 
+	// Load RHS value of variable "a" at offset 0
+ 	 loadAI r0, 0 	=> r13 
+	// Code for "PRINT" from offset -4
+ 	 storeAI r13 	=> r0, -4 
+ 	 outputAI r0, -4
+	// Determine address of LHS variable "c" at offset 8
+	// Load RHS value of variable "d" at offset 12
+ 	 loadAI r0, 12 	=> r15 
+	// Load RHS value of variable "a" at offset 0
+ 	 loadAI r0, 0 	=> r16 
+ 	 mult r15, r16 	=> r17 
+	// Load RHS value of variable "c" at offset 8
+ 	 loadAI r0, 8 	=> r18 
+ 	 add r17, r18 	=> r19 
+ 	 storeAI r19 	=> r0, 8 
+	// Load RHS value of variable "c" at offset 8
+ 	 loadAI r0, 8 	=> r20 
+	// Code for "PRINT" from offset -4
+ 	 storeAI r20 	=> r0, -4 
+ 	 outputAI r0, -4
+	// Determine address of LHS variable "c" at offset 8
+ 	 loadI 12 	=> r22 
+ 	 storeAI r22 	=> r0, 8 
+	// Determine address of LHS variable "e" at offset 16
+	// Load RHS value of variable "d" at offset 12
+ 	 loadAI r0, 12 	=> r24 
+	// Load RHS value of variable "b" at offset 4
+ 	 loadAI r0, 4 	=> r25 
+ 	 mult r24, r25 	=> r26 
+	// Load RHS value of variable "c" at offset 8
+ 	 loadAI r0, 8 	=> r27 
+ 	 add r26, r27 	=> r28 
+ 	 storeAI r28 	=> r0, 16 
+	// Load RHS value of variable "e" at offset 16
+ 	 loadAI r0, 16 	=> r29 
+	// Code for "PRINT" from offset -4
+ 	 storeAI r29 	=> r0, -4 
+ 	 outputAI r0, -4
