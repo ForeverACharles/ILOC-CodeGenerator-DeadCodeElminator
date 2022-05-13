@@ -11,7 +11,7 @@ CCFLAGS = -ggdb -Wall -lm
 
 
 compile: deadcode.c InstrUtils.c InstrUtils.h Instr.h
-	gcc $(CCFLAGS) deadcode.c InstrUtils.c -o deadcode
+	gcc $(CCFLAGS) deadcode.c InstrUtils.c -o deadcode 
 
 clean:
 	rm -rf deadcode
