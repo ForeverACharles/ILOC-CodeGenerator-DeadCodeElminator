@@ -5,7 +5,7 @@ by Charles Li
 Dead Code Elimination Project written in C
 
 ### Usage 
-In order to run the register allocator program:
+In order to run the dead code elimination program:
 1) Have the project directory open in terminal/shell
 
 2) Place all testing input files in the directory
