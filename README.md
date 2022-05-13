@@ -8,6 +8,8 @@
 The ILOC instruction set has similar feature parity with the more widely-known Assembly instruction set.
 In C code, the compiler takes the higher level language and translates it into a lower level language of Assembly. Which then gets translated to machine code of just 1s and 0s.
 
+More information on the ILOC language can be found [here](https://www.clear.rice.edu/comp512/Labs/SimDoc2015.pdf)
+
 ### Register Allocation
 
 One of the key roles of the compiler is decidng how to allocate physical CPU registers most efficiently as it does its translation. If the higher level language involves many arithemetic and memory operations, then it is advatangeous to have as many physical registers as possible to account for all of them. But in the real world, processors only have a limited amount.
