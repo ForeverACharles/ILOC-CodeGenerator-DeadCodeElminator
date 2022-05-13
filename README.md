@@ -14,9 +14,27 @@ One of the key roles of the compiler is decidng how to allocate physical CPU reg
 
 So to solve this issue, the compiler must dedicate a certain number of available physical registers to act as virtual registers. The job of these virtual registers is to give somewhere for the CPU to offload values that aren't immediately needed so that the normal physical registers can be filled with values that are immediately needed for arithmetic operations.
 
-Whenever the compiler needs to spill values from physcial registers to virtual registers, it must produce respective spill code. Spill code inherently has a performance penalty as it implies that processing time for artihmetic operations are instead spent on register-to-register transfers. Minimizing the amount of spill code produced during compilation is crucial for efficiency.
+Whenever the compiler needs to spill values from physcial registers to virtual registers, it must produce respective spill code. Spill code inherently has a performance penalty as it implies that processing time that could have been used for arithmetic operations are instead wasted on register-to-register transfers. Minimizing the amount of spill code produced during compilation is crucial for maximizing efficiency of compiled code.
 
 ### Dead Code Elimination
+
+For efficiency, the compiler also needs to do a good job at removing unnecessary opcodes from its code translation. In higher level languages, some examples of dead code would include assignment of variables that are never used in the program or a pointless arithmetic operation where the result is never used afterword.
+
+Consider the code snippet below
+
+```
+func():             //loadI 1024 => r0
+    int a = 2       //loadI 1 => r1
+    int b = 2       //loadI 2 => r2
+
+    int c = a + b   //add r1, r2 => r3
+
+    print a         //store r1 => r0
+                    //output 1024
+```
+
+In this example, the compiled code that corresponds to variables *b* & *c* will be eliminated because the final operation has no dependency on these values. However, if a print statement dependent on variable *c* were to exist, then their respetive opcodes would remain.
+
 
 This repo is broken up into 2 parts:
 - ILOC physical & virtual register allocation
