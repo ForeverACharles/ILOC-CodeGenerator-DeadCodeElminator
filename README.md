@@ -10,7 +10,7 @@ In C code, the compiler takes the higher level language and translates it into a
 
 One of the key roles the compiler is to decide how to allocate physical CPU registers most efficiently as it does its translation. If the higher level language involves many arithemetic and memory operations, then it is advatangeous to have as many physical registers as possible to account for all of them. But in the real world, processors only have a limited amount.
 
-So to solve this issue, the compiler must dedicate a certain number of available physical registers to act as virtual registers. The job of these virtual registers is to give somewhere for the CPU to offload values that aren't immediately needed so that the normal physical registers can be filled with values that are needed for any normal immediate and arithmetic operations.
+So to solve this issue, the compiler must dedicate a certain number of available physical registers to act as virtual registers. The job of these virtual registers is to give somewhere for the CPU to offload values that aren't immediately needed so that the normal physical registers can be filled with values that are immediately needed for arithmetic operations.
 
 This repo is broken up into 2 parts:
 - ILOC physical & virtual register allocation
