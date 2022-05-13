@@ -37,7 +37,7 @@ func():             loadI 1024 => r0                            func():         
                     output 1024                                                     output 1024
 ```
 
-In this example, the compiled code that corresponds to variables *b* & *c* will be eliminated because the final operation has no dependency on these values. However, if a print statement dependent on variable *c* were to exist, then their respetive opcodes would remain.
+In this example, the compiled code that corresponds to variables *b* & *c* will be eliminated because the final operation has no dependency on these values. However, if a print statement dependent on variable *c* were to exist, then their respective opcodes would remain.
 
 
 This repo is broken up into 2 parts:
