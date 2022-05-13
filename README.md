@@ -24,13 +24,13 @@ Consider the code snippet below
 
 ```
 Oringal Program     ILOC Opcode generated                       Original Progeam    New ILOC Opcode
-func():             loadI 1024 => r0                            func():             loadI 1024 => r0        
-    int a = 2       loadI 1 => r1                                   int a = 2       loadI 1 => r1               
-    int b = 2       loadI 2 => r2             Dead Code             int b = 2                          
+func():             loadI 1024 => r0                            func():             loadI 1024 => r0
+    int a = 2       loadI 1 => r1                                   int a = 2       loadI 1 => r1           
+    int b = 2       loadI 2 => r2             Dead Code             int b = 2                     
                                         ---- Elimination ---->   
-    int c = a + b   add r1, r2 => r3                                int c = a + b                           
+    int c = a + b   add r1, r2 => r3                                int c = a + b                
     
-    print a         store r1 => r0                                  print a         store r1 => r0              
+    print a         store r1 => r0                                  print a         store r1 => r0 
                     output 1024                                                     output 1024
 ```
 
