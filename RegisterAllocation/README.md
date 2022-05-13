@@ -1,4 +1,4 @@
-## Register Allocation
+# Register Allocation
 
 by Charles Li
 
