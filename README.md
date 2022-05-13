@@ -23,7 +23,7 @@ For efficiency, the compiler also needs to do a good job at removing unnecessary
 Consider the code snippet below
 
 ```
-Original Program    ILOC Opcode generated                       Original Progeam    New ILOC Opcode
+Original Program    ILOC Opcode generated                       Original Program    New ILOC Opcode
 func():             loadI 1024 => r0                            func():             loadI 1024 => r0
     int a = 2       loadI 1 => r1                                   int a = 2       loadI 1 => r1           
     int b = 2       loadI 2 => r2             Dead Code             int b = 2                     
