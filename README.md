@@ -40,6 +40,6 @@ func():             loadI 1024 => r0                            func():         
                     output 1024                                                     output 1024
 ```
 
-In this example, the compiled code that corresponds to variables *b* & *c* will be eliminated because the final operation has no dependency on these values. However, if a print statement dependent on variable *c* were to exist, then their respective opcodes would remain.
+In this example, the compiled code that corresponds to variables *b* & *c* will be eliminated because the final operation has no dependency on these values. However, if a print statement depending on variable *c* were to exist, then their respective opcodes would remain.
 
 To determine which opcodes to include and which to eliminate, the compiler may build a dependecy graph starting from the last opcode where a register is used for fucntion return or print to standard out. Moving backward from the final opcode, opcodes that involve registers included in the final opcode are added to the dependecy graph. Afterwards, opcode and register dependency is traced until the graph cannot be expanded any further. Any opcodes that do no contribute to important output code are then eliminated.
