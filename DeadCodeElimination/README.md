@@ -4,14 +4,6 @@ by Charles Li
 
 Dead Code Elimination Project written in C
 
-### Details
-
-Register allocation has been implemented with 4 different flavors.
-- Bottom-Up
-- Top-Down Simple
-- Top-Down with Max Live & Live Range Consideration
-- Top-Down with Relative Frequency Ranking
-
 ### Usage 
 In order to run the register allocator program:
 1) Have the project directory open in terminal/shell
