@@ -18,6 +18,7 @@ So to solve this issue, the compiler must dedicate a certain number of available
 
 Whenever the compiler needs to spill values from physcial registers to virtual registers, it must produce respective spill code. Spill code inherently has a performance penalty as it implies that processing time that could have been used for arithmetic operations are instead wasted on register-to-register transfers. Minimizing the amount of spill code produced during compilation is crucial for maximizing efficiency of compiled code.
 
+Register allocation typically follows either a bottom-up or top-down approach. The former involves allocating available registers based on when a value will be used further down in the compiled code. The latter makes use of some built-up knowledge of the compiled code after a pass and then allocating registers based on that knowledge.
 
 ### Dead Code Elimination
 
@@ -39,7 +40,4 @@ func():             loadI 1024 => r0                            func():         
 
 In this example, the compiled code that corresponds to variables *b* & *c* will be eliminated because the final operation has no dependency on these values. However, if a print statement dependent on variable *c* were to exist, then their respective opcodes would remain.
 
-
-This repo is broken up into 2 parts:
-- ILOC physical & virtual register allocation
-- ILOC dead opcode eliminator
+To determine which opcodes to include and which to eliminate, the compiler may build a dependecy graph starting from the last opcode where a register is used for fucntion return or print to standard out. Moving backward from the final opcode, opcodes that involve registers included in the final opcode are added to the dependecy graph. Afterwards, opcode and register dependency is traced until the graph cannot be expanded any further. Any opcodes that do no contribute to important output code are then eliminated.
