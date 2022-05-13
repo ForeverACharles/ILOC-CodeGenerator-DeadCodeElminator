@@ -12,11 +12,12 @@ In C code, the compiler takes the higher level language and translates it into a
 
 One of the key roles of the compiler is decidng how to allocate physical CPU registers most efficiently as it does its translation. If the higher level language involves many arithemetic and memory operations, then it is advatangeous to have as many physical registers as possible to account for all of them. But in the real world, processors only have a limited amount.
 
-<img src="https://user-images.githubusercontent.com/50348516/168216766-ffffbaf8-989e-4edc-82d5-fbc3166da61c.png" align="left" width="400"/> 
+<img src="https://user-images.githubusercontent.com/50348516/168216766-ffffbaf8-989e-4edc-82d5-fbc3166da61c.png" align="left" height="300" width="400" /> 
 
 So to solve this issue, the compiler must dedicate a certain number of available physical registers to act as virtual registers. The job of these virtual registers is to give somewhere for the CPU to offload values that aren't immediately needed so that the normal physical registers can be filled with values that are immediately needed for arithmetic operations.
 
 Whenever the compiler needs to spill values from physcial registers to virtual registers, it must produce respective spill code. Spill code inherently has a performance penalty as it implies that processing time that could have been used for arithmetic operations are instead wasted on register-to-register transfers. Minimizing the amount of spill code produced during compilation is crucial for maximizing efficiency of compiled code.
+
 
 ### Dead Code Elimination
 
