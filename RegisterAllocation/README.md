@@ -9,7 +9,7 @@ Local Register Allocation Project written in C
 Register allocation has been implemented with 4 different flavors.
 - Bottom-Up
 - Top-Down Simple
-- Top-Down with Max Live and Live Range Compuration
+- Top-Down with Max Live & Live Range Consideration
 - Top-Down with Relative Frequency Ranking
 
 ### Usage 
