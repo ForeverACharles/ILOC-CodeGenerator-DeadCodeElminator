@@ -12,7 +12,7 @@ More information on the ILOC language can be found [here](https://www.clear.rice
 
 ### Register Allocation
 
-One of the key roles of the compiler is decidng how to allocate physical CPU registers most efficiently as it does its translation. If the higher level language involves many arithemetic and memory operations, then it is advatangeous to have as many physical registers as possible to account for all of them. But in the real world, processors only have a limited amount.
+One of the key roles of the compiler is deciding how to allocate physical CPU registers most efficiently as it does its translation. If the higher level language involves many arithemetic and memory operations, then it is advatangeous to have as many physical registers as possible to account for all of them. But in the real world, processors only have a limited amount.
 
 <img src="https://user-images.githubusercontent.com/50348516/168216766-ffffbaf8-989e-4edc-82d5-fbc3166da61c.png" align="left" height="370" width="400" /> 
 
